@@ -1,0 +1,202 @@
+
+
+<style>
+div.container {
+	
+    width: 100%;
+    border: 1px solid gray;
+    height:  900px;
+}
+
+
+
+div.left{
+
+    position: absolute;
+    left: 200px;
+    width: 250px;
+    border: 3px solid black;
+    padding: 10px;
+    
+}
+div.center{
+	position: absolute;
+    left: 500px;
+    width: 250px;
+    border: 3px solid black;
+    padding: 10px;
+    
+    
+}
+div.right {
+    position: absolute;
+    left: 800px;
+    width: 250px;
+    border: 3px solid black;
+    padding: 10px;
+    
+}
+
+div.leftt{
+
+    position: absolute;
+    top: 70%;
+    left: 200px;
+    width: 250px;
+    border: 3px solid black;
+    padding: 10px;
+    
+}
+div.centerr{
+	position: absolute;
+	top: 70%;
+    left: 500px;
+    width: 250px;
+    border: 3px solid black;
+    padding: 10px;
+    
+    
+}
+div.rightt {
+    position: absolute;
+    top: 70%;
+    left: 800px;
+    width: 250px;
+    border: 3px solid black;
+    padding: 10px;
+    
+}
+
+
+nav {
+    float: right;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button2 {background-color: #f44336;}
+
+</style>
+
+
+
+<div class="container">
+
+<header>
+   <h2>Exchange Platform</h2>
+</header>
+ 
+
+
+  <h3>Currency Exchange</h3>
+  <aside>Amount: 
+  <input type="text" name='0' id="0" style="width:125px" ng-model="amount">
+  </aside>
+  
+  <p>
+  <div class="left">
+  USD/JPY  <br><br>
+ 
+  <p ng-model="name" ng-model="name2"> &nbsp; &nbsp;  {{name}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    {{name2}}</p>
+	
+  
+   
+  <input type="button" class="button" value="Bid" ng-click="usd_jpy_bid()"></input>
+  <input type="button"  class="button button2" value="Ask" ng-click="usd_jpy_ask()"></input>
+  </div>
+  
+  
+  <div class="center">
+    AUD/JPY  <br><br>
+  <p ng-model="name3" ng-model="name4"> &nbsp; &nbsp;  {{name3}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    {{name4}}</p>
+	  
+  <input type="button" class="button" value="Bid" ng-click="aud_jpy_bid()"></input>
+  <input type="button"  class="button button2" value="Ask" ng-click="aud_jpy_ask()"></input>
+  </div>
+  
+  <div class="right">
+  EUR/CAD<br><br>
+  <p ng-model="name5" ng-model="name6"> &nbsp; &nbsp; {{name5}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    {{name6}}</p>
+	  
+  <input type="button" class="button" value="Bid" ng-click="eur_cad_bid()"></input>
+  <input type="button"  class="button button2" value="Ask" ng-click="eur_cad_ask()"></input>
+
+  </div>
+
+  </p>
+  <br>
+    <div id="spacer" style="width: 200px; height: 100px; float:left; display:inline-block"></div>
+
+  <p>	
+  <br>
+  <div class="leftt">
+  USD/CNY	<br><br>
+  <p ng-model="name7" ng-model="name8"> &nbsp; &nbsp;{{name7}}  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   {{name8}}</p>
+	  
+  <input type="button" class="button" value="Bid" ng-click="usd_cny_bid()"></input>
+  <input type="button"  class="button button2" value="Ask" ng-click="usd_cny_ask()"></input>
+
+  </div>
+  
+  <div class="centerr">
+  CAD/CNY<br><br>
+  <p ng-model="name9" ng-model="name10"> &nbsp; &nbsp;{{name9}}  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {{name10}}</p>
+	  
+  <input type="button" class="button" value="Bid" ng-click="cad_cny_bid()"></input>
+  <input type="button"  class="button button2" value="Ask" ng-click="cad_cny_ask()"></input>
+
+  </div>
+  
+  <div class="rightt">
+  GBP/USD <br><br>
+  <p ng-model="name11" ng-model="name12"> &nbsp; &nbsp; {{name11}}   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {{name12}}</p>
+	  
+  <input type="button" class="button" value="Bid" ng-click="gbp_usd_bid()"></input>
+  <input type="button"  class="button button2" value="Ask" ng-click="gbp_usd_ask()"></input>
+
+  </div>
+	<br> <br> <br> <br> <br> <br>  <br> <br> <br> <br><br> <br> <br> <br> <br> <br><br> <br> <br> <br><br> 
+  </p>
+  <p>Transaction History</p>
+ 
+ 
+  <div class="list-group">
+  
+  <a class="list-group-item" ng-repeat="record in records">
+  <table style="width:100%">
+  <tr>
+    <th>{{record.Order}}</th>
+    <th>{{record.Currencies}}</th> 
+    <th>{{record.Amount}}</th>
+    <th>{{record.Price}}</th>
+    <th>{{record.DateTime}}</th>
+  </tr>
+</table>
+    <i class="glyphicon glyphicon-remove pull-right"
+        ng-click="removeRecord(record)"></i></a>
+</div>
+
+

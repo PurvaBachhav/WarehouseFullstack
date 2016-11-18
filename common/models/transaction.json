@@ -1,0 +1,34 @@
+{
+  "name": "Transaction",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Order": {
+      "type": "string",
+      "required": true
+    },
+    "Currencies": {
+      "type": "string",
+      "required": true
+    },
+    "Amount": {
+      "type": "number",
+      "required": true
+    },
+    "Price": {
+      "type": "number",
+      "required": true
+    },
+    "DateTime": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
